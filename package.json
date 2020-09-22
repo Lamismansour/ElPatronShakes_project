@@ -1,0 +1,29 @@
+{
+  "name": "projectelpatron",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "&&webpack-cli",
+    "start:dev": "webpack-dev-server"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "mustache-loader": "^1.4.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^6.1.1",
+    "css-loader": "^2.1.1",
+    "file-loader": "^6.1.0",
+    "json-loader": "^0.5.7",
+    "mustache": "^4.0.1",
+    "style-loader": "^0.23.1",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.1.0"
+  }
+}

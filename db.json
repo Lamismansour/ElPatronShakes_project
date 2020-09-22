@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1,"name": "El Fantasy","img": "product_1.jpg"
+    },
+    {
+      "id": 2,"name": "El Captin","img": "product_2.jpg"
+    },
+    {
+      "id": 3,"name": "El Monster","img": "product_3.jpg"
+    },
+    {
+      "id": 4,"name": "El Bomb","img": "product_4.jpg"
+    },
+    {
+      "id": 5,"name": "El Hurricane","img": "product_5.jpg"
+    },
+    {
+      "id": 6,"name": "El Dragon","img": "product_6.jpg"
+    },
+    {
+      "id": 7,"name": "El Rico","img": "product_7.jpg"
+    },
+    {
+      "id": 8,"name": "El Magic","img": "product_8.jpg"
+    },
+    {
+      "id": 9,"name": "El General","img": "product_9.jpg"
+    },
+    {
+      "id": 10,"name": "El Coco","img": "product_10.jpg"
+    },
+    {
+      "id": 11,"name": "El Bonbon","img": "product_11.jpg"
+    },
+    {
+      "id": 12,"name": "Berry Ice Tea","img": "product_12.jpg"
+    },
+    {
+      "id": 13,"name": "Tropical Ice Tea","img": "product_13.jpg"
+    },
+    {
+      "id": 14,"name": "Caramel Ice Coffee","img": "product_14.jpg"
+    },
+    {
+      "id": 15,"name": "Milk Shake","img": "product_15.jpg"
+    }
+  ]
+}
