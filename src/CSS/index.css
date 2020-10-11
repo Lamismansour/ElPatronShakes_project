@@ -1,8 +1,14 @@
-
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+ }
+ 
 body{
     font-family: sans-serif;
-    background:url('../../public/images/background2.jpg')no-repeat center/cover fixed;
-    background-size: cover; 
+    margin: 0px;
+    min-height: 100%;
+    width: 100% 
 
 }
 
@@ -11,18 +17,20 @@ body{
     justify-content: flex-end;
     flex-direction: row;
     align-items: center;
-    padding: 30px 10%;
+    padding: 20px 10%;
+    min-height: 100px;  
+    background-color: #EFEFEF;  
 }
 
 .navLogo{
     margin-right: auto;
-    width: 2em;
+    width: 20%;
 }
-.links{
+.homeLinks{
     list-style: none;
 }
 
-.links li {
+.homeLinks li {
     display: inline-block;
     color: black;
     padding: 0px 20px; 
@@ -35,10 +43,9 @@ li a {
     font-size: 1.2rem;
 
 }
-/* {color:rgb(0, 128, 85) */
-/* .links li:hover{background-color: rgb(0, 128, 85)}*/
 
-.links li a:hover {color: rgb(1, 75, 50)};
+
+.homeLinks li a:hover {color: rgb(1, 75, 50)};
 
 .section{
     display: flex;
@@ -46,6 +53,9 @@ li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 20%;
+    min-height: 400px;
 
 }
 
@@ -54,6 +64,8 @@ li a {
     flex-direction: row;
     flex-wrap:wrap ;
     justify-content: center;
+    width: 100%;
+    margin-top: 2px;
 }
 
 #startButton{
@@ -63,33 +75,100 @@ li a {
     cursor: pointer;
     color:black;
     font-size: 20px;
-
+    background-color:rgba(0, 128, 85, 0.226)
 }
 
-#startButton:hover{color:black; background-color:rgba(0, 128, 85, 0.226)}
+#startButton:hover{color:black; background-color:#EFEFEF}
 
 .aboutUs{
     margin-right: auto;    
     flex-wrap:wrap-reverse ;
+    width: 100%;
+    height: 20%;
+    min-height: 150px;
+
 }
-
-
+.aboutUs p{
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+}
 .footer{
-    margin-right: auto;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+}
+.footerBlock{
     display: flex;
-    flex-direction: column;
-    flex-wrap:wrap ;
-
+    flex-direction: row;
+    width: 100%;
 }
-
 .footerLogo{
-    width: 2em;
+    width: 20%;
 }
 
-.footerBox {
+.footerListBox {
     list-style: none;
+    width: 50%;
 }
 
-.footerBox li{
+.footerListBox li{
     padding: 0.5em;
+}
+/* content alignment if the viewport is less than 870px */
+@media screen and (max-width: 870px) {
+    .header{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 50px;
+    }
+    .navLogo{
+        width: 50%;
+        justify-content: center;
+        margin: 0;
+    }
+    ul{
+        padding: 0mm;
+    }
+    .homeLinks li
+    {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    li a {
+        font-weight: normal;
+        font-size: 1rem;
+        margin-top: 0.5em;
+    }
+    .section {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .buttonSection{
+        display: none;
+    }
+    .aboutUs{
+        font-size: 0.7em;
+    }
+    .footer{
+    width: 100%;
+    height: 20%;
+    font-size: 0.7em;
+
+    }
+
+    .footerBlock{
+        flex-direction: column;
+    }
+    .footerLogo{
+        width: 50%;
+    }
+    
+    h1{
+        font-size: 1em;
+    }
 }

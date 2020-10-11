@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../public/bundle/bundle.js"></script>
+    <script src="https://kit.fontawesome.com/76c2e313f5.js" crossorigin="anonymous"></script>
+    <title>checkout</title>
+</head>
+<body>
+    <div class="checkoutHeader">
+        <img class="menuLogo" src="./images/newLogo.PNG">
+        <a href="./deliveryOrPickup.html"> <i class="fas fa-arrow-circle-left"></i></a>
+    </div>
+    <div class="container">
+      <form name= 'userInfoForm' action='./Confirmation.html'>
+        <div class="row">
+          <div class="col-50">
+            <h3>Customer Information</h3>
+            <label for="firstName"><i class="firstName"></i> First Name</label>
+            <input id="firstName" name="firstName"/>
+            <label for="lastName"><i class="lastName"></i> Last Name</label>
+            <input id="lastName" name="lastName"/>
+            <label for="email"><i class="email"></i> Email</label>
+            <input type="text" id="email" name="email"/>
+            <label for="adr"><i class="address"></i> Address</label>
+            <input id="address" name="address"/>
+            <label for="city"><i class="city"></i> City</label>
+            <input id="city" name="city" />
+            <label for="phone"><i class="phone"></i> Phone</label>
+            <input id="phone" name="phone" />
+          </div>
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="cname">Name on Card</label>
+            <input id="cname" name="cardname">
+            <label for="ccnum">Credit card number</label>
+            <input id="ccnum" name="cardnumber">
+            <label for="expmonth">Exp Month</label>
+            <input id="expmonth" name="expmonth">
+            <label for="expiryyear">Exp Year</label>
+            <input id="expiryyear" name="expiryyear">
+            <label for="cvv">CVV</label>
+            <input id="cvv" name="cvv">
+          </div>
+        </div>
+        <button type="submit"  class="checkoutBtn">Submit</button>
+       </form>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+<script>
+    $.validator.addMethod("regex", function(value, element, regexpr) {          
+     return regexpr.test(value);
+    }, "please enter valid input");
+    $("form[name='userInfoForm']").validate({
+      rules: {
+        firstName:{
+            required : true,
+            regex: /^[a-zA-Z]+$/,
+            minlength:2,
+          },
+        lastName:{
+          required: true,
+          regex: /^[a-zA-Z]+$/,
+          minlength:2,
+          },
+        email: {
+          required: true,
+          email: true
+        },
+        address:{
+          required: true,
+          regex: /^[a-zA-Z0-9 +(),-]+$/
+          },
+        city: {
+          required: true,
+          regex: /^[a-zA-Z]+$/,
+          },
+        phone: {
+          required: true,
+          regex:/[0-9]{3}-[0-9]{7}/,
+        },
+        cardname:{
+          required : true,
+          regex: /^[a-zA-Z +(),-]+$/
+        },
+        cardnumber:{
+          required: true,
+          regex:/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}/,
+        },
+        expmonth:{
+          required: true,
+          regex:/[0-9]{2}/,
+          maxlength:2,
+          min:1,
+          max:12         
+        },
+        expiryyear:{
+          required: true,
+          regex:/^(20)\d{2}$/
+        },
+        cvv:{
+          required: true,
+          regex:/[0-9]{3}/,
+          maxlength:3,
+        }
+      },
+      messages: {
+        firstName: "Please enter your first name",
+        lastName: "Please enter your last name",
+        address: "Please enter your address",
+        city: "Please enter your city",
+        phone: "Please enter a valid phone",
+        email: "Please enter a valid email address",
+        cardname: "Please enter name on card",
+        cardnumber:"Please enter valid card number",
+        expmonth:"Please enter expiry month",
+        expiryyear:"Please enter expiry year",
+        cvv: "please enter valid cvv number"
+      },
+      submitHandler: function(form) {
+          form.submit();
+      }
+    }); 
+</script>
+</html>

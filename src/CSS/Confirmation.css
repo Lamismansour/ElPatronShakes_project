@@ -1,0 +1,38 @@
+.container{
+    width: 100%;
+    display: block;
+}
+
+
+.confirmHeader{
+    display:flex;
+    flex-wrap:wrap ;
+    justify-content: space-evenly;
+    padding: 20px;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    margin: auto;
+
+}
+
+.headerLogo{
+    width: 10em;
+}
+
+.confirmBox{
+    width: 80%;
+}
+
+form .error {
+    color: #ff0000;
+}
+/* change the font size and header content alignment if the viewport is less than 768px */
+@media screen and (max-width: 768px) {
+    .confirmHeader{
+        flex-direction: column;
+        align-content: center;
+    }
+    .confirmBox, .confirmHeader{
+        font-size: 0.7em;
+    }
+}

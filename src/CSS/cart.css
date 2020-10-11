@@ -1,0 +1,67 @@
+
+.cartHeader{
+box-sizing: border-box;
+font-style: normal;
+padding: 26px 30px 16px;
+}
+
+.cartBox{
+    font-size: 1.2em;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px 20px;
+}
+
+.productBlock{
+    border:1px solid black;
+    width: 80%;
+    padding: 20px;
+}
+
+
+.totalPriceBox, .cartLinks{
+    width: 80%;
+    padding: 20px;
+}
+
+.cartLinks{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.cartLinks a {
+    padding: 20px;
+    text-decoration: none;
+    border-radius: 1em;
+}
+
+
+.deliveryOrPickupLink{
+    background: #018849;
+    color: #fff;
+}
+.BackToMenu{
+    border: 2px solid  #018849;;
+}
+
+/* align content for screen less than 768px*/
+@media screen and (max-width: 768px) {
+    .cartBox , .totalPriceBox{
+        width:90%;
+        font-size: 1em;
+    }
+    
+    .cartLinks{
+        margin-top: 0.5em;
+    }
+    .deliveryOrPickupLink ,.BackToMenu{
+        margin:1em;
+        width:70%;
+    }
+}

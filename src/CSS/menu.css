@@ -2,19 +2,42 @@ body{
     font-family: sans-serif;
 
 }
+.container {
+    width: 100%;
+    display: block;
+}
 
 .menuHeader {
     display:flex;
     flex-wrap:wrap ;
     justify-content: center;
-    padding: 30px 10%;
+    padding: 20px;
     color:rgb(0, 0, 0);
     font-weight: bold;
-    background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.08)); 
-
 }
 
+.menuHeader a {
+    margin: auto;
+    list-style: none;
+    font-size: 1em;
+}
+
+.menuHeader h1 {
+    margin: auto;
+}
+
+.menuLogo{
+    width: 10em;
+}
+
+.menuPrices{
+    display:flex;
+    flex-wrap:wrap ;
+    justify-content: right;
+    font-weight: bold;
+}
 .menuBox{
+
     display: flex;
     flex-wrap:wrap ;
     flex-direction: row;
@@ -22,14 +45,16 @@ body{
     align-content: space-between;
 }
 
+
 .productMenuBox{
     display: flex;
     flex-direction: column;
     flex-wrap:wrap ;
     justify-content: center;
     align-content: space-between;
+    min-height: 100px;
+    padding: 25px 10px;
     margin-top:2%;
-
 
 }
 
@@ -40,7 +65,7 @@ body{
 .menuImg{
     width: 20em;
     border-radius: 20%;
-    padding: 1rem;
+    padding: 1.5em;
 }
 
 a {
@@ -48,12 +73,55 @@ a {
 }
 
 .orderProductLink {
-    font: bold 16px;
     text-decoration: none;
     color: #333333;
-    padding: 2px 6px 2px 6px;
-    border: 1px solid #ccccccad;
+    background-color:lightgray;
+    /* padding: 2px 6px 2px 6px; */
+    width: 3em;
+    /* height: 1.5em; */
+    font-size: 1.5em;
+    text-align: center;
 }
 
 
-.orderProductLink:hover{color:black; background-color:rgba(0, 128, 85, 0.226)}
+.orderProductLink:hover{
+    color:black; background-color:rgba(0, 128, 85, 0.226)
+}
+
+@media screen and (max-width: 660px){
+
+    .menuImg{
+        width: 95%;
+        padding: 1.5em;
+
+    }
+
+    .orderProductLink {
+        border-radius: 10%;
+        width: 4em;
+        font-size: 2em;
+    }
+
+    .productMenuBox{
+        flex-direction: unset;
+    }
+}
+/*  alignment if the viewport is less than 768px */
+@media screen and (max-width: 786px){
+
+    .menuImg{
+        width: 95%;
+        padding:1em;
+
+    }
+
+    .orderProductLink {
+        border-radius: 10%;
+        width: 4em;
+        font-size: 2em;
+    }
+
+    .productMenuBox{
+        flex-direction: unset;
+    }
+}

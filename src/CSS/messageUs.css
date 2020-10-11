@@ -1,0 +1,101 @@
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+ }
+ 
+body{
+    font-family: sans-serif;
+    margin: 0px;
+    min-height: 100%;
+    width: 100% 
+
+}
+
+.meassageContainer{
+    background-color: #f2f2f2;
+    padding: 5px 15px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    width: 100%;
+    display: block;
+}
+
+.messageHeader{
+    display:flex;
+    flex-wrap:wrap ;
+    justify-content: space-evenly;
+    padding: 20px 10%;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    min-height: 100px; 
+}
+
+.messageHeader h1 {
+    margin: auto;
+}
+
+.messageHeader a {
+    margin-right: 10px;
+    list-style: none;
+    font-size: 1em;
+}
+
+.headerLogo{
+    width: 10em;
+}
+
+#phone , #fName{
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#message{
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 80px;
+}
+
+.messageForm{    
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.messageButton{
+    background-color: #018849;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    margin: 0px 35%;
+}
+  
+.messageButton:hover {
+    background-color: #45a049;
+}
+
+/* change the font size and header content alignment if the viewport is less than 768px */
+@media screen and (max-width: 768px) {
+    .messageHeader{
+        flex-direction: column;
+        align-content: center;
+    }
+    .messageForm {
+        font-size: 0.7em;
+    }
+    .messageHeader a , h1 {
+        margin: auto;
+        align-content: center;
+        padding: 0.5em;
+    }
+}
+

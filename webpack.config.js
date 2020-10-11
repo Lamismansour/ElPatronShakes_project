@@ -14,7 +14,7 @@ const config = function (mode) {
             filename: 'bundle.js',
             publicPath: '/public/bundle/',
         },
-        watch:true,
+        watch:false,
         module: {
             rules: [
             {
@@ -61,7 +61,7 @@ const config = function (mode) {
             extensions: ['.js', '.html', '.css'],
             modules: [
               'node_modules'
-            ]        
+            ]   
         },
         plugins: [
             new webpack.ProvidePlugin({
