@@ -1,174 +1,151 @@
-html {
-    margin: 0px;
-    height: 100%;
-    width: 100%;
- }
- 
-body{
-    font-family: sans-serif;
-    margin: 0px;
+.pageContainer {
+    width: 1200px;
+    padding-bottom: 0;
+    top: 0;
     min-height: 100%;
-    width: 100% 
+    position: relative;
+    margin: 0 auto;
+}   
 
+.headerContainer{
+    position: relative;
+    margin-top: 0;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+    min-width: 1200px; 
 }
 
-.header{
+.pageHeader {
+    position: static;
     display: flex;
-    justify-content: flex-end;
     flex-direction: row;
-    align-items: center;
-    padding: 20px 10%;
-    min-height: 100px;  
-    background-color: #EFEFEF;  
+    height: auto;
+    width: 1200px;
+    min-height: auto;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    margin: auto;
 }
 
-.navLogo{
-    margin-right: auto;
-    width: 20%;
-}
-.homeLinks{
-    list-style: none;
-}
-
-.homeLinks li {
+.headerLogo{
+    position: relative;
+    margin: 10px 0px;
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: start;
+    align-self: start;
     display: inline-block;
-    color: black;
-    padding: 0px 20px; 
-    border-radius: 50px; 
 }
-
+.navbarLinks{
+    position: relative;
+    grid-area: 1 / 1 / 2 / 2;
+    width: 100%;
+}
+.linksList{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 15px 0px;
+} 
+.linksLeft{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 50px ;
+    width: 50%;
+}
+.linksList li , .linksRight li{
+    margin: auto ;
+}
 li a {
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-
+    color:black;
+}
+.linksRight{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-left: 420px;
+}
+.linksRight li a {
+    color: rgba(181, 216, 49, 1);
+}
+.section{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: auto;
+    grid-area: 2 / 1 / 3 / 2;
+    justify-self: start;
+    align-self: start;
+    overflow: initial;
+    width: 1200px;
+    min-height: auto;
 }
 
 
-.homeLinks li a:hover {color: rgb(1, 75, 50)};
-
-.section{
-    display: flex;
-    flex-wrap: wrap;
+.sectionLeft{
+    width:50%;
+    justify-content: flex-start;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 20%;
-    min-height: 400px;
+    margin: auto;
+    margin-top: 100px;
+}
 
+.sectionRight{
+    width:50%;
+    justify-content: flex-end;
+    margin: auto;
+}
+
+.sectionLeft label{
+    width: 100%;
+    justify-content: center;
+    padding: 16px 0px;
+    color: black;
+    font-size: 20px;
+    line-height: 2;
 }
 
 .buttonSection{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap ;
-    justify-content: center;
-    width: 100%;
-    margin-top: 2px;
+    margin: 30px 0px;
 }
 
 #startButton{
-    padding: 50px 50px;
-    border: black ;
-    border-radius: 50px;
+    padding: 30px;
+    border: solid rgba(108, 136, 1, 1) 0px;
     cursor: pointer;
-    color:black;
+    color:white;
     font-size: 20px;
-    background-color:rgba(0, 128, 85, 0.226)
+    background-color:rgba(181, 216, 49, 1);
 }
 
-#startButton:hover{color:black; background-color:#EFEFEF}
-
-.aboutUs{
-    margin-right: auto;    
-    flex-wrap:wrap-reverse ;
-    width: 100%;
-    height: 20%;
-    min-height: 150px;
-
-}
-.aboutUs p{
-    width: 90%;
-    margin: auto;
-    justify-content: center;
-}
-.footer{
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 20%;
-}
-.footerBlock{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-.footerLogo{
-    width: 20%;
+#startButton:hover ,.linksList li a:hover {
+    background-color: rgba(162, 204, 1, 0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.footerListBox {
-    list-style: none;
-    width: 50%;
+
+.aboutUsImage{
+    padding: 50px 0px;
 }
 
-.footerListBox li{
-    padding: 0.5em;
-}
-/* content alignment if the viewport is less than 870px */
-@media screen and (max-width: 870px) {
-    .header{
-        display: flex;
-        justify-content: center;
+/* content alignment if the viewport is less than 768px */
+@media (max-width: 768px) {
+    .pageContainer {
+        width: 768px;
+    } 
+    .pageHeader {
         flex-direction: column;
-        padding: 50px;
-    }
-    .navLogo{
-        width: 50%;
-        justify-content: center;
-        margin: 0;
-    }
-    ul{
-        padding: 0mm;
-    }
-    .homeLinks li
-    {
-        display: flex;
-        flex-wrap: wrap;
+        width: 768px;
 
     }
-    li a {
-        font-weight: normal;
-        font-size: 1rem;
-        margin-top: 0.5em;
-    }
-    .section {
-        display: flex;
-        flex-wrap: wrap;
+    .section{
         flex-direction: column;
-    }
-    .buttonSection{
-        display: none;
-    }
-    .aboutUs{
-        font-size: 0.7em;
-    }
-    .footer{
-    width: 100%;
-    height: 20%;
-    font-size: 0.7em;
+        width: 768px;
 
     }
-
-    .footerBlock{
-        flex-direction: column;
+    .linksRight{
+        margin-left: 320px;
     }
-    .footerLogo{
-        width: 50%;
-    }
-    
-    h1{
-        font-size: 1em;
-    }
-}
+} 

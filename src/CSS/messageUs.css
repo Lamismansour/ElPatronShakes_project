@@ -1,86 +1,114 @@
-html {
-    margin: 0px;
-    height: 100%;
-    width: 100%;
- }
- 
-body{
-    font-family: sans-serif;
-    margin: 0px;
-    min-height: 100%;
-    width: 100% 
-
+.contactUsContainer{
+    width: 1200px;
+    min-height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
 }
-
-.meassageContainer{
-    background-color: #f2f2f2;
-    padding: 5px 15px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-    width: 100%;
-    display: block;
-}
-
-.messageHeader{
-    display:flex;
-    flex-wrap:wrap ;
-    justify-content: space-evenly;
-    padding: 20px 10%;
-    color:rgb(0, 0, 0);
-    font-weight: bold;
-    min-height: 100px; 
-}
-
-.messageHeader h1 {
+.contactLeftSection{
+    width:50%;
+    justify-content: flex-start;
+    flex-direction: column;
     margin: auto;
 }
 
-.messageHeader a {
-    margin-right: 10px;
+.footerListBox{
+    width: 100%;
+    margin: auto;
+}
+
+.footerListBox li {
     list-style: none;
+    padding: 20px 0px;
     font-size: 1em;
 }
 
-.headerLogo{
-    width: 10em;
+.messageformContainer{
+    display:flex;
+    flex-wrap:wrap ;
+    justify-content: space-evenly;
+    align-items: center; 
+    width:50%;
+    margin: auto;
 }
 
-#phone , #fName{
-    width: 30%;
+.messageForm{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+.fieldsLeft{
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    height: 168px;
+} 
+
+
+.fieldsRight{
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    height: 168px;
+}
+
+.messageFields{
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    justify-content: flex-start;
+}
+
+.fieldsLeft input, .fieldsRight input{
     margin-bottom: 20px;
     padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    border: 1px solid rgba(181, 216, 49, 1);
+    width: 70%;
+}
+
+.fieldsLeft label, .fieldsRight label{
+    margin-bottom: 5px;
+    display: block;
+    color: black;
 }
 
 #message{
-    width: 80%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    height: 80px;
+    height: 38px;
 }
-
-.messageForm{    
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
-}
-
 .messageButton{
-    background-color: #018849;
     color: white;
+    background-color:rgba(181, 216, 49, 1);
+    border: 1px solid rgba(181, 216, 49, 1);
     padding: 12px;
-    border: none;
-    border-radius: 3px;
     cursor: pointer;
-    font-size: 17px;
-    margin: 0px 35%;
+    cursor: pointer;
+    width: 50%;
+    margin: 0px 50px;
 }
+
   
 .messageButton:hover {
-    background-color: #45a049;
+    background-color: rgba(162, 204, 1, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footerMap{
+    width: 1200px;
+    min-height: auto;
+    margin: auto;
+}
+
+.footerMap iframe{
+    margin-top: 50px ;
+    width: 100%;
+    height: 400px;
+    border: 0px;
 }
 
 /* change the font size and header content alignment if the viewport is less than 768px */
@@ -89,13 +117,14 @@ body{
         flex-direction: column;
         align-content: center;
     }
-    .messageForm {
+    .messageFields {
         font-size: 0.7em;
     }
     .messageHeader a , h1 {
         margin: auto;
         align-content: center;
         padding: 0.5em;
+        font-size: 1em;
     }
 }
 

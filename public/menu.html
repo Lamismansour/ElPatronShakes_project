@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Menu | El Patrón</title>
+    <title>El Patrón&nbsp; |&nbsp; Menu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="../public/bundle/bundle.js"></script>
     <script src="https://kit.fontawesome.com/76c2e313f5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="menuHeader">
-            <img class="menuLogo" src="./images/newLogo.PNG">
-            <h1>Menu</h1>
-            <a href="./index.html"> <i class="fas fa-home"></i></a>
+    <div class="pageContainer">
+        <div class="headerContainer">
+            <div class="pageHeader">
+              <a href="index.html"><img class="headerLogo" src="./images/blackLogo.PNG"></a>
+              <div class="navbarLinks"> 
+                <ul class="linksList" id="navBar">  
+                  <div class="linksLeft">
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="menu.html">Menu </a></li>
+                    <li><a href="messageUs.html">Contact</a></li>
+                  </div>
+                  <div class="linksRight">
+                    <li><a class="headerIcon" href="cart.html" ><i class="fas fa-shopping-cart"></i></a></li>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <div class="pageTitleContainer">
+            <label class="pageTitle">Menu</label>
         </div>
-        <div class = "menuPrices">Prices: S 17₪ | M 20₪ | L 22₪ </div>
-        <div class="menuBox"></div>
+            <div class = "menuPrices">Refreshing drinks <br>
+                S <span class="price">17₪ |</span>  M <span class="price">20₪ |</span> L <span class="price">22₪</span>
+            </div>
+        <div class=menuListContainer>
+            <div class="menuBox"></div>
+        </div>
     </div>       
 </body>
 </html>     

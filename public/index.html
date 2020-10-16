@@ -8,52 +8,44 @@
   <title>El Patrón</title>
   <script src="../public/bundle/bundle.js"></script>
   <script src="https://kit.fontawesome.com/76c2e313f5.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
-  <!-- nav bar -->
-  <div class="header" > 
-    <img class="navLogo" src="./images/newLogo.PNG">
-    <nav class="navbarLinks"> 
-      <!-- nav bar links -->
-      <ul class="homeLinks" >
-        <li><a href="index.html"><i class="fas fa-home"></i></a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="cart.html" ><i class="fas fa-shopping-cart"></i></a></li>
-        <li><a href="messageUs.html">Message Us</a></li>
-      </ul>
-    </nav>
-  </div>
-  <!-- end of nav bar -->
-  <div class="section">
-    <!-- start button section -->
-    <div class="buttonSection">
-      <form action="menu.html">
-        <button id="startButton" type="submit">View Menu</button>
-      </form>
+  <div class="pageContainer">
+    <div class="headerContainer">
+      <div class="pageHeader">
+        <a href="index.html"><img class="headerLogo" src="./images/blackLogo.PNG"></a>
+        <div class="navbarLinks"> 
+          <ul class="linksList" id="navBar">  
+            <div class="linksLeft">
+              <li><a href="index.html">Home </a></li>
+              <li><a href="menu.html">Menu </a></li>
+              <li><a href="messageUs.html">Contact</a></li>
+            </div>
+            <div class="linksRight">
+              <li><a class="headerIcon" href="cart.html" ><i class="fas fa-shopping-cart"></i></a></li>
+            </div>
+          </ul>
+        </div>
+      </div>
     </div>
-    <!-- about us section -->
-    <div class="aboutUs">
-      <h1>About Us</h1>
-      <p> In 2018 we decided to revolutionize the industry of desserts drinks and shakes. we've had our ups and downs, our fair share of bumpy roads and heavy winds and that's what made us what we are today.
-        we've put a lot of effort into combining the right ingredients to be proud to serve you the perfect taste. <br>
-        We strive to go far and be the leaders all over the country </p>
-    </div>
-    <div class="footer">
-      <h1>Contact Us</h1>
-      <div class= "footerBlock">
-        <ul class="footerListBox">
-          <li><img class="footerLogo" src="/images/newLogo.png"></li>
-          <li>Address: Al-Quds St, Tira</li>
-          <li>Phone: 052-887-7451</li>
-          <li>Mail: elpatron.shake@gmail.com</li>
-          <li> 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3375.2111564830752!2d34.95347281516802!3d32.22548048114201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d3d2000295245%3A0x413f9c20b795ece3!2z15DXnCDXpNeY16jXldef!5e0!3m2!1sen!2sil!4v1600760570949!5m2!1sen!2sil" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-          </li> 
-        </ul>
+    <div class="section">
+      <div class="sectionLeft">
+        <label> EL Patrón revolutionary of drinks and shakes. <br>
+          The combination of the right ingredients and the perfect taste. <br>
+          At 2018 our first branch was established ,after bumpy roads and heavy
+           winds we are proud of our drinks and what we are today.<br>
+          We hope to be the insperation in shakes and drinks indusrty all over the country<br>
+        </label>
+        <div class="buttonSection">
+          <form action="menu.html">
+             <button id="startButton" type="submit">View Menu</button>
+          </form>
+        </div>
+      </div>
+      <div class="sectionRight">
+          <img class="aboutUsImage" src="./images/background2.png">
       </div>
     </div>
   </div>
-  
-</body>
+  </body>
 </html>

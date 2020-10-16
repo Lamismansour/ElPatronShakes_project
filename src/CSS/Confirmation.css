@@ -1,26 +1,12 @@
-.container{
-    width: 100%;
-    display: block;
-}
-
-
-.confirmHeader{
-    display:flex;
-    flex-wrap:wrap ;
-    justify-content: space-evenly;
-    padding: 20px;
-    color:rgb(0, 0, 0);
-    font-weight: bold;
-    margin: auto;
-
-}
-
-.headerLogo{
-    width: 10em;
-}
 
 .confirmBox{
-    width: 80%;
+    font-size: 1.2em;
+    list-style: none;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    padding: 20px 0px;
 }
 
 form .error {

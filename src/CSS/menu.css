@@ -1,113 +1,122 @@
-body{
-    font-family: sans-serif;
-
-}
-.container {
-    width: 100%;
-    display: block;
-}
-
-.menuHeader {
-    display:flex;
-    flex-wrap:wrap ;
-    justify-content: center;
-    padding: 20px;
-    color:rgb(0, 0, 0);
-    font-weight: bold;
-}
-
-.menuHeader a {
+.pageTitleContainer{
+    width: 1200px;
+    pointer-events: none;
+    position: relative;
     margin: auto;
-    list-style: none;
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: start;
+    align-self: start;
+    padding: 50px 0px;
+}
+
+.pageTitle {
+    letter-spacing: 0.15em;
+    margin: 0;
+    line-height: normal;
+    font: normal normal normal 35px/1.1em ,fantasy;
+    color:rgba(181, 216, 49, 1);
+    font-size: 1.5em;
+}
+
+
+.menuPrices{
+    position: relative;
+    justify-self: start;    
+    align-self: start;
+    color: black;
+    margin: auto;
+    width: 1200px;
+    letter-spacing: 0.15em;
     font-size: 1em;
 }
 
-.menuHeader h1 {
+.price {
+    color:rgba(181, 216, 49, 1);
+    line-height: 3em;
+
+}
+.menuListContainer{
+    position: relative;
+    grid-area: 2 / 1 / 3 / 2;
+    justify-self: start;
+    align-self: start;  
+    overflow: initial;
+    width: 1200px;
     margin: auto;
 }
 
-.menuLogo{
-    width: 10em;
-}
-
-.menuPrices{
-    display:flex;
-    flex-wrap:wrap ;
-    justify-content: right;
-    font-weight: bold;
-}
 .menuBox{
-
     display: flex;
     flex-wrap:wrap ;
     flex-direction: row;
     justify-content: center;
     align-content: space-between;
+    width:100%; 
+    margin:auto;
+    box-sizing: border-box;
 }
-
 
 .productMenuBox{
     display: flex;
     flex-direction: column;
     flex-wrap:wrap ;
+    width: calc(100% / 4 + 0px);
+    padding: 42px;
     justify-content: center;
-    align-content: space-between;
-    min-height: 100px;
-    padding: 25px 10px;
-    margin-top:2%;
-
 }
 
 .productName{
-    margin: auto;
+    margin: 10px auto;
+    padding: 13px 0px;
+    color: black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    width: 70%;
+    display: flex;
+    align-items: center;
 }
 
+.drinkIcon{
+    width: 30px;
+    margin: 0px 20px;
+}
 .menuImg{
-    width: 20em;
-    border-radius: 20%;
-    padding: 1.5em;
-}
+    width: 100%;
+    height: 200px;
+    vertical-align: middle;
 
-a {
-    margin: auto;
 }
 
 .orderProductLink {
     text-decoration: none;
-    color: #333333;
-    background-color:lightgray;
-    /* padding: 2px 6px 2px 6px; */
-    width: 3em;
-    /* height: 1.5em; */
-    font-size: 1.5em;
+    color:white;
+    background-color:rgba(181, 216, 49, 1);
+    width: 70%;
+    font-size: 1em;
     text-align: center;
+    border: 1px solid rgba(181, 216, 49, 1);
+    padding: 20px 0px;
+    margin: auto;
 }
 
 
 .orderProductLink:hover{
-    color:black; background-color:rgba(0, 128, 85, 0.226)
+    background-color: rgba(162, 204, 1, 0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
-@media screen and (max-width: 660px){
-
-    .menuImg{
-        width: 95%;
-        padding: 1.5em;
-
-    }
-
-    .orderProductLink {
-        border-radius: 10%;
-        width: 4em;
-        font-size: 2em;
-    }
-
-    .productMenuBox{
-        flex-direction: unset;
-    }
-}
 /*  alignment if the viewport is less than 768px */
-@media screen and (max-width: 786px){
+@media (max-width: 786px){
+    .menuHeader{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 50px; 
+    }
+
+    .menuHeader h1{
+        font-size: 1.5em;
+    }
 
     .menuImg{
         width: 95%;

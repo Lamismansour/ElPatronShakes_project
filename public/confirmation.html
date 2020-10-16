@@ -4,13 +4,29 @@
     <title>Confirmation | El Patrón</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="../public/bundle/bundle.js"></script>
-    
+    <script src="https://kit.fontawesome.com/76c2e313f5.js" crossorigin="anonymous"></script>    
 </head>
 <body>
-    <div class="container">
-        <div class="confirmHeader">
-            <img class="headerLogo" src="./images/newLogo.PNG">
-            <h1>Order Confirmation</h1>
+    <div class="pageContainer">
+        <div class="headerContainer">
+            <div class="pageHeader">
+              <a href="index.html"><img class="headerLogo" src="./images/blackLogo.PNG"></a>
+              <div class="navbarLinks"> 
+                <ul class="linksList" id="navBar">  
+                  <div class="linksLeft">
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="menu.html">Menu </a></li>
+                    <li><a href="messageUs.html">Contact</a></li>
+                  </div>
+                  <div class="linksRight">
+                    <li><a class="headerIcon" href="cart.html" ><i class="fas fa-shopping-cart"></i></a></li>
+                  </div>
+                </ul>
+              </div>
+            </div>
+        </div>
+        <div class="pageTitleContainer">
+            <h1 class="pageTitle">Order Confirmation</h1>
         </div>
         <div class="confirmBox">
             Order Id: <span class="orderId">###</span> <br><br><br>

@@ -1,122 +1,108 @@
-html {
-    margin: 0px;
-    height: 100%;
-    width: 100%;
-}
-
-body{
-    font-family: sans-serif;
-    font-size: 1.5em;
-    width: 100%;
-}
-
-.productHeader{
-    display:flex;
-    flex-wrap:wrap ;
-    justify-content: space-evenly;
-    padding: 20px;
-    color:rgb(0, 0, 0);
-    font-weight: bold;
-}
-
 .selectedProductName {
-    margin: auto;
-}
-.productHeader a {
-    margin: auto;
-    list-style: none;
-    font-size: 1em;
-}
-
-.headerLogo {
-    width: 10em;
+    letter-spacing: 0.15em;
+    margin: 0;
+    line-height: normal;
+    font: normal normal normal 35px/1.1em ,fantasy;
+    color:rgba(181, 216, 49, 1);
+    font-size: 1.5em;
 }
 
 .selectedProduct{
-    display: flex;
-    flex-wrap:wrap ;
+    position: relative;
+    margin: auto;
+    grid-area: 2 / 1 / 3 / 2;
+    justify-self: start;
+    align-self: start;  
+    overflow: initial;
+    width: 1200px;
+    justify-content: flex-start;
     flex-direction: column;
-    align-content: space-between;
-}
-
-.productBox{
-    display: flex;
-    flex-wrap:wrap ;
-    justify-content: center;
-    align-content: space-between;
-    margin-top:2%;
-    width: 100%;
-}
-
-.productForm{
-    width: 50%;
-}
-#drinkSize, #quantity ,#upgradeId, label {
-    padding: 12px;
-    width: 100%; 
-    font-size: 1em; 
     margin: auto;
 }
 
-h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.3em;
-    margin-block-end: 0.3em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+.productBox{
+    list-style: none;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 800px;
+    padding: 20px 0px;
+} 
+
+.productForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap ;
+    width: 80%;
+    margin: auto; 
+    justify-content: center;
+    align-content: space-between;
+    
 }
 
+#drinkSize {
+    padding: 12px 10px;
+    border: 0.5px solid black;
+}
+
+#quantity {
+    padding: 12px 10px;
+    width: 100%; 
+    border-width: 1px;
+}
+.productForm label {
+    padding: 12px 0px;
+    width: 100%; 
+   
+}
+ .links{
+    display: flex;
+    margin: auto;
+    justify-content: flex-start;
+    padding: 20px 0px;
+    width: 50%;
+ }
+
+.links button, .links a{
+    padding: 12px;
+    text-decoration: none;
+    margin: 0 12px;
+}
 
 .addToCartLink {
     display: inline-block;
-    padding: 2em;
-    margin: 1em auto;
-    border-radius:1em;
-    box-sizing: border-box;
-    text-decoration:none;
-    text-align:center;
-    background-color: #018849;
-    color: #fff;
-    width: 100%;
-    font-size: 0.7em;
+    margin: auto;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color:rgba(181, 216, 49, 1);
+    border: 2.5px solid  rgba(181, 216, 49, 1);
+    width: 200px;
 }
 
 .backToMenuLink{
+    border: 1px solid  rgba(181, 216, 49, 1);
+    color: black;
     display: inline-block;
-    padding: 1em;
-    margin: 1em auto;
-    border-radius:1em;
-    box-sizing: border-box;
-    text-decoration:none;
-    text-align:center;
-    background: #fff;
-    border:1px solid #018849;
-    width: 100%;
-    
+    margin: auto;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+   
 }   
 
-.links{
-    display: flex;
-    flex-direction: column;
+button:hover, a:hover{
+    background-color: rgba(162, 204, 1, 0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
-button:hover, a:hover{color:black; background-color:rgba(0, 128, 85, 0.226)}
-
 /* align content for screen less than 768px*/
-@media screen and (max-width: 768px) {
-    .productHeader{
-        flex-direction: column;
-        align-content: center;
-    }
-    .productHeader a {
-        align-content: center;
-        padding: 0.5em;
-    }
+@media (max-width: 768px) {
+
     .backToMenuLink ,.addToCartLink{
         padding:0.5em;
         width:70%;
+        margin: 5px 20%;
     }
 
     .productForm{
@@ -125,11 +111,13 @@ button:hover, a:hover{color:black; background-color:rgba(0, 128, 85, 0.226)}
         padding: 0.5em;
     }
 
-    #drinkSize, #quantity ,#upgradeId, label {
-        /* padding: 0.5em; */
+    #drinkSize, #quantity {
         width: 100%;
         font-size: 0.7em;
         margin: auto;
     }
-}
+    .links{
+        flex-direction: column;
+    }
 
+}

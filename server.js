@@ -1,5 +1,6 @@
 const jsonServer = require("json-server");
 const server = jsonServer.create();
+const _ = require('lodash')
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('db.json');
@@ -11,7 +12,6 @@ const router = jsonServer.router("./db.json");
 server.use(jsonServer.bodyParser);
 
 const cors = require('cors');
-const { compilation } = require("webpack");
 server.use(
     cors({
         origin: '*',
@@ -28,6 +28,8 @@ server.use((req, res, next) => {
     let orderItem = body.orderItem;
     let deliveryOrPickup = body.deliveryOrPickup;
     let user = body.user;
+    //Post requests from the service are handled here
+    //Post requests updates/creates the order object with orderId, userTokenId, orderStatus, userID, orderItem and deliveryOrPickup
     if (req.method == "POST") {
         if((orderItem != undefined)) {
             let orderItemPrice = updateOrderItemPrice(orderItem);
@@ -55,7 +57,14 @@ server.use((req, res, next) => {
         }
     }
     else{
+    //Get order and user from database and send the responce to the methods called from the service 
         if(req.method== 'GET'){
+            // let product = req.query;
+            if(_.isEmpty(req.query)) {
+                let allProducts = db.get('products').value();
+                res.status(200).json(JSON.stringify(allProducts));
+                return;
+            }
             let userTokenId = req.query.userTokenId;
             let result = db.get('orders').find({'userTokenId': userTokenId }).value(); 
             let userId = result.userId;
@@ -83,12 +92,15 @@ server.use((req, res, next) => {
     return;
 });
 //-----
+//finds if there is an open order for userTokenId
+//if exist return the order object
 function isOrderExist(userTokenId){
     let orders = db.get('orders') 
-    let userOrder = orders.find({'userTokenId': userTokenId }).value(); //finds if there is an open order for userTokenId
+    let userOrder = orders.find({'userTokenId': userTokenId }).value(); 
     return userOrder;
 }
 //-----
+//add order item to the order calculate the total price for this item
 function addOrderItem(userOrder, body){
     let userTokenId = body.userTokenId;
     let orderItem = body.orderItem;
@@ -105,6 +117,7 @@ function addOrderItem(userOrder, body){
     orders.find({'userTokenId': userTokenId }).push({'orderItem' : item}).write();
 }
 //-----
+//for each orderItem add the price of the selected product based on the selected size using the price object from database
 function updateOrderItemPrice(orderItem){
     let itemSize = orderItem[0].size;
     let itemQuantity = orderItem[0].quantity;
@@ -114,6 +127,9 @@ function updateOrderItemPrice(orderItem){
     return Object.assign(orderItem[0] , {itemPrice : itemPrice}, {totalItemPrice:totalItemPrice});
 }
 //-----
+//find if the user exists in the database based on the phone number submitted by the user.
+//if the user does not exist the function generates a new userId and save the data
+//if the user exists the function returns the current userId
 function isUserExist(user){
     let users = db.get('users')
     let phone = user.phone;

@@ -21,8 +21,7 @@ import "regenerator-runtime/runtime.js";
                 contentType: 'application/json',
                 type: 'GET',
                 success: function (result) {
-                    //--convert result to string and then store in the local storage
-                    localStorage.setItem('products', JSON.stringify(result));
+                    localStorage.setItem('products', result);
                     let productsLocalStorage = JSON.parse(localStorage.getItem('products'));
                     return productsLocalStorage;
                 },

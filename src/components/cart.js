@@ -8,7 +8,7 @@ $(document).ready(function(){
         data = JSON.parse(data.responseJSON);
         let template = "{{#.}}" 
         + "<div class='productBlock'>"
-        + "<p class='menuProductName'> {{quantity}} X {{productName}} , {{size}} {{itemPrice}} ₪ </p>"
+        + "<p class='menuProductName'><img class='cartImg' src='./images/product_{{id}}.png' class='drinkIcon'> {{productName}} ,  &nbsp;    {{size}} <span class='itemPriceRight'> {{quantity}} X &nbsp;   {{itemPrice}} ₪ </span> </p>"
         + "</div> {{/.}}";
         $('.cartBox').append(Mustache.render(template, data.orderItem));
         let totalPrice = null;
@@ -18,7 +18,7 @@ $(document).ready(function(){
         $( ".calculatedTotalPrice").html(totalPrice + "₪");
     }
     if(userTokenId == null){
-        $('.cartBox').html("Your cart is still Empty! Go to the menu and get shopping!")
+        $('.cartBox').html("Your cart is Empty! Go to menu and check the great drinks we have for you!")
         $( ".totalPriceBox").html("");
         $('.deliveryOrPickupLink').hide();
     }

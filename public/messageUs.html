@@ -7,24 +7,84 @@
     <script src="https://kit.fontawesome.com/76c2e313f5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="meassageContainer">
-        <div class="messageHeader">
-            <img class="headerLogo" src="./images/newLogo.PNG">
-            <h1>Message Us</h1>
-            <a href="./index.html"><i class="fas fa-home"></i></a>
-        </div>
-        <form name= 'messageForm' action='./index.html'>
-            <div class="col-50">
-              <h3>Customer Information</h3>
-              <label for="fName"><i class="fName"></i> Full Name</label>
-              <input type="text" id="fName" name="fName">
-              <label for="phone"><i class="phone"></i> Phone</label>
-              <input type="text" id="phone" name="phone" >
-              <label for="message"><i class="message"></i> message</label>
-              <input type="text" id="message" name="message" >
+    <div class="pageContainer">
+        <div class="headerContainer">
+            <div class="pageHeader">
+              <a href="index.html"><img class="headerLogo" src="./images/blackLogo.PNG"></a>
+              <div class="navbarLinks"> 
+                <ul class="linksList" id="navBar">  
+                  <div class="linksLeft">
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="menu.html">Menu </a></li>
+                    <li><a href="messageUs.html">Contact</a></li>
+                  </div>
+                  <div class="linksRight">
+                    <li><a class="headerIcon" href="cart.html" ><i class="fas fa-shopping-cart"></i></a></li>
+                  </div>
+                </ul>
+              </div>
             </div>
-          <button type="submit" class="messageButton">Submit</button>
-        </form>
+        </div>
+        <div class="pageTitleContainer">
+            <h1 class="pageTitle">Contact</h1>
+        </div>
+        <div class="contactUsContainer">
+            <div class="contactLeftSection">
+                <ul class="footerListBox">
+                    <li>Address: Al-Quds St, Tira</li>
+                    <li>Phone: 052-887-7451</li>
+                    <li>Mail: elpatron.shake@gmail.com</li>
+                </ul>
+            </div>
+            <div class="messageformContainer">
+                <form class="messageForm" name= 'messageForm' action='./index.html'>
+                    <div class="fieldsLeft">
+                        <label for="fName"><i class="fName"></i> Full Name</label>
+                        <input type="text" id="fName" class="mName" name="fName">
+                        <label for="phone"><i class="phone"></i> Phone</label>
+                        <input type="text" id="phone" class="mPhone" name="phone" >
+                    </div>
+                    <div class="fieldsRight">
+                        <label for="message"><i class="message"></i> Message</label>
+                        <input type="text" id="message" name="message" >
+                        <button type="submit" class="messageButton">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footerMap"> 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3375.2111564830752!2d34.95347281516802!3d32.22548048114201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d3d2000295245%3A0x413f9c20b795ece3!2z15DXnCDXpNeY16jXldef!5e0!3m2!1sen!2sil!4v1600760570949!5m2!1sen!2sil" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div> 
     </div>       
 </body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+<script>
+    $("form[name='messageForm']").validate({
+      rules: {
+        fName:{
+            required : true,
+            regex: /^[a-zA-Z]+$/,
+            minlength:2,
+          },
+        phone: {
+            required: true,
+            regex:/[0-9]{3}-[0-9]{7}/,
+        }, 
+        message: {
+            required: true,
+            regex:/^[a-zA-Z +(),-]+$/,
+            maxlength:120,
+        },       
+      },
+      messages: {
+        fName: "Please select drink size!",
+        phone: "Please enter quantity between 1 - 20",
+        message: "please add your message"
+      },
+      submitHandler: function(form) {
+          form.submit();
+      }
+    });
+</script> 
 </html>  

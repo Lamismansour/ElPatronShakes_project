@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../public/bundle/bundle.js"></script>
     <script src="https://kit.fontawesome.com/76c2e313f5.js" crossorigin="anonymous"></script>
-    <title>checkout</title>
+    <title>El Patrón&nbsp; |&nbsp; checkout</title>
 </head>
 <body>
-    <div class="checkoutHeader">
-        <img class="menuLogo" src="./images/newLogo.PNG">
-        <a href="./deliveryOrPickup.html"> <i class="fas fa-arrow-circle-left"></i></a>
+  <div class="pageContainer">
+    <div class="headerContainer">
+      <div class="pageHeader">
+        <a href="index.html"><img class="headerLogo" src="./images/blackLogo.PNG"></a>
+        <div class="navbarLinks"> 
+          <ul class="linksList" id="navBar">  
+            <div class="linksLeft">
+              <li><a href="index.html">Home </a></li>
+              <li><a href="menu.html">Menu </a></li>
+              <li><a href="messageUs.html">Contact</a></li>
+            </div>
+            <div class="linksRight">
+              <li><a class="headerIcon" href="cart.html" ><i class="fas fa-shopping-cart"></i></a></li>
+            </div>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="container">
-      <form name= 'userInfoForm' action='./Confirmation.html'>
-        <div class="row">
-          <div class="col-50">
+    <div class="pageTitleContainer">
+        <h1 class="pageTitle">checkout</h1>
+    </div>
+      <form class="userInfoForm" name= 'userInfoForm' action='./Confirmation.html'>
+        <div class="formContainer">
+          <div class="formColumn">
             <h3>Customer Information</h3>
             <label for="firstName"><i class="firstName"></i> First Name</label>
-            <input id="firstName" name="firstName"/>
+            <input id="firstName" name="firstName">
             <label for="lastName"><i class="lastName"></i> Last Name</label>
-            <input id="lastName" name="lastName"/>
+            <input id="lastName" name="lastName">
             <label for="email"><i class="email"></i> Email</label>
-            <input type="text" id="email" name="email"/>
+            <input type="text" id="email" name="email">
             <label for="adr"><i class="address"></i> Address</label>
-            <input id="address" name="address"/>
+            <input id="address" name="address">
             <label for="city"><i class="city"></i> City</label>
-            <input id="city" name="city" />
+            <input id="city" name="city">
             <label for="phone"><i class="phone"></i> Phone</label>
-            <input id="phone" name="phone" />
+            <input id="phone" name="phone">
           </div>
-          <div class="col-50">
+          <div class="formColumn">  
             <h3>Payment</h3>
             <label for="cname">Name on Card</label>
             <input id="cname" name="cardname">
@@ -44,9 +59,11 @@
             <input id="cvv" name="cvv">
           </div>
         </div>
-        <button type="submit"  class="checkoutBtn">Submit</button>
-       </form>
-    </div>
+        <div class="checkoutBtnContainer">
+          <button type="submit"  class="checkoutBtn">Submit</button>
+        </div>
+      </form>
+  </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
@@ -72,11 +89,11 @@
         },
         address:{
           required: true,
-          regex: /^[a-zA-Z0-9 +(),-]+$/
+          regex: /^[a-zA-Z0-9 +(),-]+$/,
           },
         city: {
           required: true,
-          regex: /^[a-zA-Z]+$/,
+          regex: /^[a-zA-Z0-9 +(),-]+$/,
           },
         phone: {
           required: true,
@@ -84,7 +101,7 @@
         },
         cardname:{
           required : true,
-          regex: /^[a-zA-Z +(),-]+$/
+          regex: /^[a-zA-Z +(),-]+$/,
         },
         cardnumber:{
           required: true,
@@ -112,7 +129,7 @@
         lastName: "Please enter your last name",
         address: "Please enter your address",
         city: "Please enter your city",
-        phone: "Please enter a valid phone",
+        phone: "Please enter a valid phone (example 050-1234567)",
         email: "Please enter a valid email address",
         cardname: "Please enter name on card",
         cardnumber:"Please enter valid card number",
