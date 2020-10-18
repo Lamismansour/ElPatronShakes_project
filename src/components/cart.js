@@ -3,7 +3,7 @@ import * as css from '../CSS/cart.css';
 
 $(document).ready(function(){
     let userTokenId = JSON.parse(sessionStorage.getItem('userTokenId'));
-    if(userTokenId != null) {  
+    if(userTokenId != null) { 
         let data = $('.cartBox').shakesPluginService().getOrder(userTokenId);
         data = JSON.parse(data.responseJSON);
         let template = "{{#.}}" 

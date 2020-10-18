@@ -48,6 +48,8 @@ import "regenerator-runtime/runtime.js";
                 return allProducts.id == queryStringId
             });
         };
+        //-- create and save new userTokenId to session storage only if userTokenId was not generated yet
+        //-- if userTokenId esixts use the current userTokenId
         //-- add ordered products by userTokenId to cart
         //-- each cart lists all items by name and quantity and the item price
         //--the total price is presented in the cart
@@ -60,7 +62,6 @@ import "regenerator-runtime/runtime.js";
             let userTokenId = JSON.parse(sessionStorage.getItem('userTokenId'));
             $.ajax({
                 type:'POST',
-                crossDomain: true,
                 url: "http://localhost:3000/orders",
                 async: false, 
                 data: JSON.stringify({"userTokenId" : userTokenId, "orderItem" : [orderItem]}),

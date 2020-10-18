@@ -57,9 +57,8 @@ server.use((req, res, next) => {
         }
     }
     else{
-    //Get order and user from database and send the responce to the methods called from the service 
+    //Get products, order and user from database and send the responce to the calles from the service 
         if(req.method== 'GET'){
-            // let product = req.query;
             if(_.isEmpty(req.query)) {
                 let allProducts = db.get('products').value();
                 res.status(200).json(JSON.stringify(allProducts));
@@ -78,7 +77,7 @@ server.use((req, res, next) => {
                 }
                 if(userId != null){
                     let getUser = db.get('users').find({'userId': userId}).value();
-                    let userName = getUser.fullName;
+                    let userName = getUser.fisrtName;
                     Object.assign(result , {'userName' : userName})
                 }
                 res.status(200).json(JSON.stringify(result));
@@ -100,7 +99,8 @@ function isOrderExist(userTokenId){
     return userOrder;
 }
 //-----
-//add order item to the order calculate the total price for this item
+//add order item to the order and add total price for this item
+//if the orderItem already  exist in the orderItem array (product with the same id and size) update the quantity and total price for this item
 function addOrderItem(userOrder, body){
     let userTokenId = body.userTokenId;
     let orderItem = body.orderItem;
