@@ -72,7 +72,8 @@ import "regenerator-runtime/runtime.js";
                 error:function(error){
                 }
             });
-        }// get order info and update the cart page
+        }
+        // get order info and update the cart page
         this.getOrder = function(userTokenId) {
             return $.ajax({
                 type: 'GET',
@@ -89,7 +90,6 @@ import "regenerator-runtime/runtime.js";
             let userTokenId = JSON.parse(sessionStorage.getItem('userTokenId'));
             $.ajax({
                 type:'POST',
-                crossDomain: true,
                 url: "http://localhost:3000/orders",
                 async: false, 
                 data: JSON.stringify({"deliveryOrPickup": deliveryOrPickup, "userTokenId" : userTokenId}),
@@ -107,7 +107,6 @@ import "regenerator-runtime/runtime.js";
             let userTokenId = JSON.parse(sessionStorage.getItem('userTokenId'));
             $.ajax({
                 type:'POST',
-                crossDomain: true,
                 url: "http://localhost:3000/users",
                 async: false, 
                 data: JSON.stringify({"user": user, "userTokenId" : userTokenId}),
